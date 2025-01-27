@@ -4,11 +4,11 @@ name: Target Repository
 
 # Controls when the workflow will run
 on: 
-  workflow_dispatch:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  repository_dispatch:
-    types: 
-      - triggered-by-source-repo
+ workflow_dispatch:
+    inputs:
+      title:
+        description: 'The title of the pull request or commit message'
+        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,9 +21,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-        with:
-          ref: ${{github.event.client_payload.branch}}
+        #with:
+          #ref: ${{github.event.client_payload.branch}}
 
+      - name: Log Event Details
+        run: |
+          echo "Title: ${{ github.event.inputs.title }}"
+        
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world, senthil in dev!
