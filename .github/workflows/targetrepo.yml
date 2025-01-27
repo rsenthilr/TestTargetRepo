@@ -33,3 +33,18 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      # Set up JDK
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # Compile the Java program
+      - name: Compile Java program
+        run: javac Main.java
+
+      # Run the Java program
+      - name: Run Java program
+        run: java Main    
