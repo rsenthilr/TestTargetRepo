@@ -23,4 +23,4 @@ jobs:
      #Add steps to Execute Automation Test script
       - name: Steps to Execute Automation Test Scripts
         run: |
-          echo "Execute Automation Test Scripts......"
+          echo "Steps To Execute Automation Test Scripts......!!!!"
