@@ -19,34 +19,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-        #with:
-          #ref: ${{github.event.client_payload.branch}}
-
-      - name: Log Event Details
+     
+     #Add steps to Execute Automation Test script
+      - name: Steps to Execute Automation Test Scripts
         run: |
-          echo "Title: ${{ github.event.client_payload.title }}"
-        
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world, senthil in dev!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-
-      # Set up JDK
-      #- name: Set up Java
-        #uses: actions/setup-java@v3
-        #with:
-          #distribution: 'temurin'
-          #java-version: '17'
-
-      # Compile the Java program
-      #- name: Compile Java program
-       # run: javac Main.java
-
-      # Run the Java program
-      #- name: Run Java program
-        #run: java Main    
+          echo "Execute Automation Test Scripts......"
