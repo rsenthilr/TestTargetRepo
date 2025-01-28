@@ -6,7 +6,7 @@ name: Target Repository
 on: 
  repository_dispatch:
     types:
-      - ${{ github.event.inputs.title }}
+      - ${{ github.event.client_payload.title }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Log Event Details
         run: |
-          echo "Title: ${{ github.event.inputs.title }}"
+          echo "Title: ${{ github.event.client_payload.title }}"
         
       # Runs a single command using the runners shell
       - name: Run a one-line script
