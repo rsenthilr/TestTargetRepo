@@ -5,10 +5,6 @@ name: Target Repository
 # Controls when the workflow will run
 on: 
  workflow_dispatch:
-    inputs:
-      title:
-        description: 'The title of the pull request or commit message'
-        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
